@@ -7,6 +7,7 @@ import com.despido.talentdespido.model.Reason;
 import com.despido.talentdespido.repository.ReasonRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ReasonService {
@@ -16,6 +17,10 @@ public class ReasonService {
 
     public List<Reason> findAll() {
         return reasonRepository.findAll();
+    }
+    public Reason findById(Long id) {
+        Optional<Reason> reason = reasonRepository.findById(id);
+        return reason.orElse(null);
     }
 
 

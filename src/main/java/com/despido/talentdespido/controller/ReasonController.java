@@ -19,6 +19,16 @@ public class ReasonController {
         return ResponseEntity.ok(reasonService.findAll());
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getReasonById(@PathVariable Long id) {
+        Reason reason = reasonService.findById(id);
+        if (reason != null) {
+            return ResponseEntity.ok(reason);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
     @PostMapping
     public ResponseEntity<?> createReason(@RequestBody Reason reason, @RequestParam String createForUser) {
         reason.setCreateForUser(createForUser); 
