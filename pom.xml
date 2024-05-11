@@ -6,9 +6,6 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.2.5</version>
-		 <configuration>
-                <mainClass>com.despido.talentdespido.ReasonApplication</mainClass>
-            </configuration>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.despido</groupId>
