@@ -30,8 +30,7 @@ public class ReasonController {
     }
 
     @PostMapping
-    public ResponseEntity<?> createReason(@RequestBody Reason reason, @RequestParam String createForUser) {
-        reason.setCreateForUser(createForUser); 
+    public ResponseEntity<?> createReason(@RequestBody Reason reason) {
         return ResponseEntity.ok(reasonService.save(reason));
     }
 
