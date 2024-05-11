@@ -19,6 +19,8 @@ public class Reason {
     @Column(name = "name")
     private String name;
 
+    
+
     @Column(name = "description")
     private String description;
 
@@ -36,6 +38,14 @@ public class Reason {
 
     public String getDescription() {
         return description;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setDescription(String description) {
