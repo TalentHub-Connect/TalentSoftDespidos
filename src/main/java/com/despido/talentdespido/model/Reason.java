@@ -21,7 +21,7 @@ public class Reason {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "createforuser", insertable = false, updatable = false)
+    @Column(name = "createforuser")
     private String createForUser;
 
     @Column(name = "companyid")
