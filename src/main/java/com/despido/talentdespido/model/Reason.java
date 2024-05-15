@@ -24,7 +24,7 @@ public class Reason {
     @Column(name = "createforuser", insertable = false, updatable = false)
     private String createForUser;
 
-    @Column(name = "company_id")
+    @Column(name = "companyid")
     private Long companyId;
 
     public Long getId() {
