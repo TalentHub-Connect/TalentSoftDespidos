@@ -2,7 +2,6 @@ package com.despido.talentdespido.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.despido.talentdespido.model.Reason;
 import com.despido.talentdespido.repository.ReasonRepository;
 
@@ -18,11 +17,15 @@ public class ReasonService {
     public List<Reason> findAll() {
         return reasonRepository.findAll();
     }
+
+    public List<Reason> findAllByCompanyId(Long companyId) {
+        return reasonRepository.findByCompanyId(companyId);
+    }
+
     public Reason findById(Long id) {
         Optional<Reason> reason = reasonRepository.findById(id);
         return reason.orElse(null);
     }
-
 
     public Reason save(Reason reason) {
         return reasonRepository.save(reason);

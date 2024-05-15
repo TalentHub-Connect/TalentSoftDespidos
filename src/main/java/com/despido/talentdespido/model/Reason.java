@@ -1,6 +1,5 @@
 package com.despido.talentdespido.model;
 
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -25,7 +24,9 @@ public class Reason {
     @Column(name = "createforuser", insertable = false, updatable = false)
     private String createForUser;
 
-  
+    @Column(name = "company_id")
+    private Long companyId;
+
     public Long getId() {
         return id;
     }
@@ -58,6 +59,11 @@ public class Reason {
         this.createForUser = createForUser;
     }
 
-  
+    public Long getCompanyId() {
+        return companyId;
+    }
 
+    public void setCompanyId(Long companyId) {
+        this.companyId = companyId;
+    }
 }

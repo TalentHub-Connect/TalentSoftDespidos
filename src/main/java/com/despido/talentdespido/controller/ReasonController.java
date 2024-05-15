@@ -3,7 +3,6 @@ package com.despido.talentdespido.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import com.despido.talentdespido.model.Reason;
 import com.despido.talentdespido.service.ReasonService;
 
@@ -15,8 +14,12 @@ public class ReasonController {
     private ReasonService reasonService;
 
     @GetMapping
-    public ResponseEntity<?> getAllReasons() {
-        return ResponseEntity.ok(reasonService.findAll());
+    public ResponseEntity<?> getAllReasons(@RequestParam(required = true) Long companyId) {
+        if (companyId != null) {
+            return ResponseEntity.ok(reasonService.findAllByCompanyId(companyId));
+        } else {
+            return ResponseEntity.ok(reasonService.findAll());
+        }
     }
 
     @GetMapping("/{id}")
